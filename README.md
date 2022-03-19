@@ -41,7 +41,7 @@ AVATAR_UPLOAD_PRESET=`Cloudinary main upload preset where avatars will be store`
 
 ### 2. Setting up the client:
 
-first you need to get config.json filed in ./client/src/http and then
+first you need to get config.json file in ./client/src/http and then
 
 ```json
 {
