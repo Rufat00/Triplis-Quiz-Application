@@ -1,0 +1,43 @@
+@import '../../../../styles/style';
+
+.search-bar{
+    padding: 15px 0;
+    .seacrh-box{
+        display: flex;
+        input{
+            flex-grow: 1;
+            background: $paper;
+            border: 1px solid $paper;
+            color: $text-main;
+            font-size: 20px;
+            padding: 8px 20px;
+            border-radius: 5px 0 0 5px;
+            border-right: none;
+            transition: border 0.3s;
+            &:focus{
+                border-color: $purple;
+            }
+            &::placeholder{
+                color: $text-main;
+            }
+            width: 100%;
+        }
+        label{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            background: $purple;
+            border-radius: 0 5px 5px 0;
+            color: white;
+            svg{
+                width: 36px;
+                height: 36px;
+            }
+            &:hover{
+                background: darken($purple, 2);
+            }
+        }
+    }
+}
+            

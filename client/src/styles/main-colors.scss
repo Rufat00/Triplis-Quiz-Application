@@ -1,0 +1,49 @@
+@import './colors.scss';
+@import url('https://fonts.cdnfonts.com/css/sofia-pro?styles=17626');
+@import url('https://fonts.cdnfonts.com/css/vag-primer?styles=123054');
+
+//?---bg-colors---?//
+
+$main-bg: $zinc-900;
+$paper: #2a2e35;
+$paper-dark: #20252c;
+
+//?---text-colors---?//
+
+$text-main: #b2becd;
+$text-header: $white;
+
+//?---hr---?//
+
+$hr: 2px dashed $paper;
+
+//?---links---?//
+
+$link-main: $blue-500;
+$link-hover: $sky-700;
+
+//?---fonts---?//
+
+$default: 'Sofia Pro',sans-serif;
+$font-head: 'VAG Primer', sans-serif;
+
+//?---colors---?//
+
+$green: darken($green-400,8);
+$red: $rose-600;
+$yellow: $amber-500;
+$cyan: $cyan-400;
+$blue: $sky-500;
+$orange: $orange-500;
+$purple: $indigo-500;
+
+//?---selection---?//
+
+$selection: $violet-700;
+
+//?---system---?//
+
+$error: $red;
+$success: $green-500;
+$info: $sky-500;
+$warning: $amber-500;

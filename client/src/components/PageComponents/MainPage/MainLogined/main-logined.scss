@@ -1,0 +1,65 @@
+@import '../../../../styles/style';
+
+.main-logined{
+    .user{
+        padding: 30px 0;
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .avatar, img{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: $paper-dark;
+            box-shadow: $shadow;
+            @include breakPoint(Extra-small){
+                height: 100px;
+                width: 100px;
+            }
+        }
+        h3{
+            margin: 25px auto;
+            font-size: 25px;
+        }
+    }
+    .record{
+        display: flex;
+        .filed{
+            margin: 0 25px;
+            span{
+                display: block;
+                text-align: center;
+                font-size: 25px;
+                color: $text-header;
+            }
+            .filed-text{
+                margin-bottom: 10px;
+            }
+            .text{
+                border-top: $hr;
+                border-color: $text-main;
+                color: $text-main;
+            }
+        }
+        @include breakPoint(Extra-small){
+            flex-direction: column;
+            .filed{
+                margin: 15px 0;
+            }
+        }
+    }
+    .buttons{
+        margin-top: 60px;
+        text-align: center;
+        button{margin: 10px;}
+        a:nth-child(1) button{
+            @include filled-button($purple)
+        }
+        a:nth-child(2) button{
+            @include filled-button($cyan)
+        }
+    }
+}

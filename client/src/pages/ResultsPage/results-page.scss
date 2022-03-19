@@ -1,0 +1,129 @@
+@import '../../styles/style';
+
+.results-page{
+    .info{
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .user{
+            .avatar, img{
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                background: $paper-dark;
+                box-shadow: $shadow;
+            }
+            .name{
+                color: $text-header;
+                text-align: center;
+                margin-top: 15px;
+                font-size: 30px;
+            }
+            @include breakPoint(Extra-small){
+                .avatar, img{
+                    margin: auto;
+                    height: 100px;
+                    width: 100px;
+                }
+                .name{font-size: 25px;}
+            }
+        }
+        .results{
+            display: flex;
+            margin-top: 40px;
+            .result{
+                margin: 0 25px;
+                span{
+                    display: block;
+                    text-align: center;
+                    font-size: 25px;
+                    color: $text-header;
+                }
+                .result-text{
+                    margin-bottom: 10px;
+                }
+                .text{
+                    border-top: $hr;
+                    border-color: $text-main;
+                    color: $text-main;
+                }
+            }
+            @include breakPoint(Extra-small){
+                flex-direction: column;
+                .result{
+                    margin: 10px auto;
+                }
+            }
+        }
+    }
+    .grades{
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div{
+            margin: 0 25px;
+            input{
+                display: none;
+            }
+            label{
+                border-radius: 50%;
+                transition: background 0.3s;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                cursor: pointer;
+                svg{
+                    height: 46px;
+                    width: 46px;
+                    transition: background 0.5s;
+                }
+            }
+            label[for="like"]{
+                &:hover{
+                    background: rgba($green, 0.3);
+                }
+            }
+            label[for="dislike"]{
+                svg{
+                    margin-top: 2px;
+                }
+                &:hover{
+                    background: rgba($red, 0.3);
+                }
+                &:checked{
+                    color: $green;
+                }
+            }
+            #like:checked + label {
+                color: $green;
+            }
+            #dislike:checked + label {
+                color: $red;
+            }
+        }
+        .like, .dislike{
+            svg{
+                height: 60px;
+                width: 60px;
+            }
+        }
+        .like{color: $green;}
+        .dislike{color: $red;}
+    }
+    .button{
+        margin-top: 60px;
+        text-align: center;
+        button{
+            @include filled-button($cyan);
+        }
+    }
+    .block{
+        padding: 25px;
+    }
+}

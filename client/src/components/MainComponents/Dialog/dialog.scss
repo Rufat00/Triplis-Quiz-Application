@@ -1,0 +1,27 @@
+@import '../../../styles/style';
+.dialog-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    z-index: 1101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dialog{
+        background: $paper;
+        border-radius: 5px;
+        box-shadow: $shadow-lg;
+    }
+
+    &.open{
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

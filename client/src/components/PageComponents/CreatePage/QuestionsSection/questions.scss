@@ -1,0 +1,20 @@
+@import '../../../../styles/style';
+
+.questions-section{
+
+    .create-new{
+        text-align: center;
+        margin: 16px auto;
+        padding: 10px;
+
+        button{
+            @include filled-button();
+            width: 100%;
+            svg{
+                width: 36px;
+                height: 36px;
+            }
+        }
+    }
+
+}

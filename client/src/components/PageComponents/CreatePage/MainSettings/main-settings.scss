@@ -1,0 +1,80 @@
+@import '../../../../styles/style';
+
+.create-page-settings{
+
+    margin:30px 0 ;
+    .image-preview{
+        position: relative;
+        background: $paper-dark;
+        border: $hr;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        max-height: 420px;
+        img{
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 400px;
+        }
+        button{
+            @extend %icon-button;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            color: white;
+            opacity: 0.3;
+            transition: opacity 0.5s, background 0.5s;
+            transform: translateY(-50%);
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+    .option{
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        label{
+            margin-bottom: 8px;
+            display: inline-flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        input{
+            @extend %outlined-input;
+            width: 100%;
+        }
+        div{
+            margin-bottom: 5px;
+            width: 100%;
+            input{
+                @include radio($purple);
+                margin: 0 15px;
+            }
+            .private{
+                @include radio($red)
+            }
+        }
+    }
+
+    .main-image{
+        input{
+            display: none;
+        }
+        label{
+            margin: auto;
+            width: 100%;
+        }
+        div{
+            @include upload-button;
+            width: 100%;
+            svg{
+                height: 36px;
+                width: 36px;
+            }
+        }
+    }
+}

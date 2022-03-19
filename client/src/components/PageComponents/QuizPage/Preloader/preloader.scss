@@ -1,0 +1,139 @@
+@import '../../../../styles/style';
+
+.preloader{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image-preloade{
+        margin-top: 30px;
+        min-height: 300px;
+        max-height: 500px;
+        width: 100%;
+        background: $paper-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            max-width: 100%;
+            max-height: 500px;
+        }
+    }
+    .data{
+        margin-top: 15px;
+        .title{
+            text-align: center;
+            font-size: 35px;
+        }
+        .describtion{
+            font-size: 25px;
+            text-align: center;
+            color: $text-main;
+        }
+
+        @include breakPoint(Extra-small){
+            .title{font-size:  25px;}
+            .describtion{font-size: 18px;}
+        }
+
+        .info{
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .author{
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                .avatar,img{
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    background: $paper-dark;
+                }
+                h3{
+                    font-size: 25px;
+                    margin-left: 20px;
+                }
+                @include breakPoint(Extra-small){
+                    flex-direction: column;
+                }
+            }
+            .options{
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                span{
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    margin: 8px;
+                    color: white;
+                    padding: 6px 15px;
+                    border-radius: 5px;
+                    svg{
+                        margin: 0 3px;
+                    }
+                }
+                .date{
+                    background: $orange;
+                }
+                .likes{
+                    background: $green;
+                }
+                .dislikes{
+                    background: $red;
+                    svg{
+                        margin-top: 5px;
+                    }
+                }
+                .private{
+                    background: $red;
+                }
+                .public{
+                    background: $blue;
+                }
+                .duration{
+                    background: $purple;
+                }
+            }
+        }
+    }
+    .rules{
+        .rules-header{
+            text-align: center;
+            font-size: 30px;
+        }
+        margin-top: 15px;
+        font-size: 18px;
+        color: $text-header;
+        border: $hr;
+        padding: 15px;
+        .rule{
+            margin: 15px 0;
+            list-style: decimal;
+            margin-left: 20px;
+            &::marker{
+                font-size: 18px;
+            }
+        }
+        @include breakPoint(Extra-small){
+            font-size: 16px;
+            .rules-header{
+                font-size: 25px;
+            }
+        }
+    }
+    .button{
+        margin: 20px auto;
+        width: 300px;
+        button{
+            @include filled-button($green);
+            width: 100%;
+        }
+        @include breakPoint(Extra-small){
+            width: 100%;
+        }
+    }
+}

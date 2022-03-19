@@ -1,0 +1,138 @@
+@import '../../../../styles/style';
+
+.quiz{
+
+    .quiz-header{
+        width: 100%;
+        background: $paper;
+        padding: 10px 0;
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button{
+            @extend %icon-button;
+            color: white;
+            svg{
+                height: 36px;
+                width: 36px;
+            }
+        }
+    }
+
+    .main{
+        padding: 15px 0;
+        .image{
+            max-height: 400px;
+            width: 100%;
+            background: $paper-dark;
+            text-align: center;
+            img{
+                max-width: 100%;
+                max-height: 400px;
+            }
+        }
+        .question-text{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 30px;
+            @include breakPoint(Extra-small){
+                font-size: 25px;
+            }
+        }
+        .answers{
+            margin: 35px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .answer{
+                width: 600px;
+                margin: 15px auto;
+                background: rgba($blue,0.2);
+                border: 2px solid $blue;
+                color: $text-main;
+                font-size: 16px;
+                padding: 12px 30px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $default;
+                font-weight: 700;
+                border-radius: 5px;
+                vertical-align: bottom;
+                box-shadow: $shadow;
+                transition: background 0.3s;
+                cursor: pointer;
+                &:hover{
+                    background: rgba($blue,0.3);
+                }
+                &.correct{
+                    @include filled-button($green);
+                    padding: 14px 32px;
+                    text-transform: none;
+                    &:hover{
+                        background: $green;
+                    }
+                }
+                &.not-correct{
+                    @include filled-button($red);
+                    padding: 14px 32px;
+                    text-transform: none;
+                    &:hover{
+                        background: $red;
+                    }
+                }
+
+                &.skip-next{
+                    @include filled-button($blue);
+                    margin-bottom: 30px;
+                }
+                @include breakPoint(Small){
+                    width: 100%;
+                }
+                @include breakPoint(Extra-small){
+                    padding: 10px 25px;
+                }
+            }
+        }
+    }
+    .footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 5px 0;
+        background: $paper;
+        &.correct{
+            background: $green;
+        }
+        &.not-correct{
+            background: $red;
+        }
+        div{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .position{
+                font-size: 25px;
+                color: white; 
+            }
+            svg{
+                height: 36px;
+                width: 36px;
+                color: white;
+            }
+            .waiting{
+                animation: waiting 1s linear infinite;
+            }
+            @keyframes waiting{
+                0%{
+                    transform: rotate(-360deg);
+                }
+                50%{
+                    transform: rotate(-360deg);
+                }
+            }
+        }
+    }
+}

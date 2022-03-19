@@ -1,0 +1,108 @@
+@import '../../../../styles/style' ;
+
+.content-bar{
+    max-width: 900px;
+    min-width: 600px;
+    max-height: 700px;
+    min-height: 500px;
+    border-radius: 5px;
+    background: $paper;
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto;
+    padding: 25px;
+
+    .content-image{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 400px;
+        img{
+            display: block;
+            margin: auto;
+            object-fit: cover;
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 5px;
+        }
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: flex-start;
+        margin-top: 20px;
+        .title{
+            font-size: 25px;
+            color: $text-header;
+        }
+        .describtion{
+            color: $text-main;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .info{
+            margin-top: 15px;
+            display: flex;
+            span{
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                margin-right: 15px;
+                color: white;
+                padding: 6px 15px;
+                border-radius: 5px;
+                svg{
+                    margin: 0 3px;
+                }
+            }
+            .date{
+                background: $cyan;
+            }
+            .like{
+                background: $green;
+            }
+            .dislike{
+                background: $red;
+                svg{
+                    margin-top: 5px;
+                }
+            }
+        }
+        .hightlight{
+            background: $purple;
+            color: $text-header;
+        }
+    }
+    @include breakPoint(Small){
+        max-width: 100%;
+        min-width: 100%;
+        max-height: 500px;
+        min-height: fit-content;
+        .content-image, .content-image img{
+            max-height: 250px;
+            min-height: auto;
+            object-fit: contain;
+        }
+        .content .title{
+            font-size: 20px;
+            width: 100%;
+        }
+        .content .describtion{
+            font-size: 18px;
+        }
+        .content .info {
+            flex-wrap: wrap;
+            span{
+                font-size: 16px;
+                margin-right: 10px;
+                margin-top: 7px;
+                padding: 4px 10px;
+            }
+        }
+    }
+
+}

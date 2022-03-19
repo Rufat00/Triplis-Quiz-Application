@@ -1,0 +1,52 @@
+@import '../../../../styles/style';
+
+.not-logined{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    flex-grow: 1;
+    background-image: url('../../../../img/background.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .overfolow{
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background: rgba(#000000,0.4);
+    }
+    .main{
+        z-index: 2;
+        width: 100%;
+        h1{
+            margin: 25px 0;
+            font-size: 45px;
+        }
+        h3,p{
+            margin: 30px 0;
+            font-size: 25px;
+        }
+        @include breakPoint(Extra-small){
+            h1{font-size: 30px;}
+            h3,p{font-size: 18px;}
+        }
+    }
+    .actions{
+        a:nth-child(1) button{
+            @include outlined-button($orange)
+        }
+        a:nth-child(2) button{
+            @include outlined-button($green)
+        }
+        button{
+            padding: 12px 40px !important;
+            margin: 10px;
+            @include breakPoint(Extra-small){
+                padding: 8px 30px !important;
+            }
+        }
+    }
+}

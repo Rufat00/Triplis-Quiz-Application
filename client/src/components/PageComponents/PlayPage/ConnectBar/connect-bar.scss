@@ -1,0 +1,30 @@
+@import '../../../../styles/style';
+
+.connect-bar{
+    border-bottom: $hr;
+    padding: 20px 0;
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input{
+            @extend %outlined-input;
+            font-size: 16px;
+            padding: 6px 20px;        
+        }
+        button{
+            @include filled-button($blue);
+            padding: 8px 20px;
+        }
+        @include breakPoint(Extra-small){
+            flex-direction: column;
+            div, input{
+                width: 100%;
+                text-align: center;
+            }
+            button{
+                margin: 10px 0;
+            }
+        }
+    }
+}

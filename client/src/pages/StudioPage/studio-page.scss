@@ -1,0 +1,26 @@
+@import '../../styles/style';
+
+.main-section{
+    .quizzes{
+        margin-top: 50px;
+    }
+}
+.studio-dialog{
+    padding: 20px;
+    text-align: center;
+    h3{
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .delete{
+        @include filled-button($red);
+    }
+    .play{
+        @include filled-button($green);
+    }
+}
+.warn{
+    margin-top: 50px;
+    font-size: 20px;
+    text-align: center;
+}

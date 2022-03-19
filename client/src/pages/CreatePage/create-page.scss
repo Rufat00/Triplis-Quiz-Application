@@ -1,0 +1,9 @@
+@import '../../styles/style';
+
+.save{
+    margin-top: 60px;
+    text-align: center;
+    button{
+        @include outlined-button($blue);
+    }
+}

@@ -1,0 +1,108 @@
+@import './main-colors.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    font-family: $default;
+}
+
+::selection {
+    background: $selection;
+    color: white;
+}
+::-moz-selection {
+background: $purple;
+}
+
+body,#root,.app {
+    height: 100vh;
+    background: $main-bg;
+}
+
+p,label {
+    color: $text-main;
+    line-height: 1.3;
+    font-weight: 400;
+    font-size: 20px;
+    @media (max-height: 576px){
+        font-size: 18px;
+    }
+}
+
+h1,h2,h3,h4{
+    color: $text-header;
+    font-weight: bold;
+}
+
+hr{
+    border: none;
+    border-bottom: $hr;
+    margin: 0 16px;
+}
+
+.link{
+    font-size: 20px;
+    opacity: 0.9;
+    color: $link-main;
+    text-decoration: underline;
+    transition: color 0.3s;
+    cursor: pointer;
+    &:hover{
+        color: $link-hover;
+        transition: color 0.3s;
+    }
+}
+
+//? Block - (container):
+
+.block {
+    margin: auto;
+    height: fit-content;
+    padding: 0 25px;
+    max-width: 1320px;
+    @media (max-width: 1400px) {
+        max-width: 1140px;
+    }
+    @media (max-width: 1200px) {
+        max-width: 960px;
+    }
+    @media (max-width: 992px) {
+        max-width: 720px;
+    }
+    @media (max-width: 768px) {
+        max-width: 540px;
+    }
+    @media (max-width: 576px) {
+        max-width: 100%;
+    }
+}
+
+.full-block {
+    width: 100%;
+    padding: 0 50px;
+    height: fit-content;
+
+    @media (max-width: 576px) {
+        padding: 0 25px;
+    }
+}
+
+//? BreakPoints:
+
+$breakPoints: (
+    "X-Large": "1400px",
+    "Large": "1200px",
+    "Medium": "992px",
+    "Small": "768px",
+    "Extra-small": "576px",
+);
+
+@mixin breakPoint($size) {
+    @media (max-width: map-get($breakPoints, $size)) {
+        @content;
+    }
+}

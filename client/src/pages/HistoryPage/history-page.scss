@@ -1,0 +1,70 @@
+@import '../../styles/style';
+
+.history-page{
+
+    .history{
+        margin: 50px auto;
+
+        .reload{
+            width: 100%;
+            text-align: center;
+            button{
+                @include filled-button($cyan);
+                width: 100%;
+                padding: 8px 30px;
+                svg{
+                    height: 36px;
+                    width: 36px;
+                }
+            }
+        }
+
+        .no-history{
+            text-align: center;
+            color: $text-header;
+            font-size: 20px;
+            margin-top: 50px;
+        }
+
+        .result{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $paper;
+            margin: 25px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: $shadow-xl;
+            
+            .results{
+                color: $text-main; 
+                display: inline-flex;
+                flex-wrap: wrap;
+                div{
+                    margin: 0 10px;
+                    @include breakPoint(Extra-small){
+                        margin: 5px 10px;
+                    }
+                }               
+            }
+            .date, .title{
+                margin: 0 5px;
+                color: $text-header;
+            }
+            .options{
+                button{
+                    @extend %icon-button;
+                    color: white;
+                    svg{
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+            }
+            @include breakPoint(Extra-small){
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

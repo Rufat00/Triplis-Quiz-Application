@@ -1,0 +1,27 @@
+@import '../../../../styles/style';
+
+.top-bar{
+    border-bottom: $hr;
+    padding: 15px 0;
+    .main{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .info{
+            font-size: 22px;
+            @include breakPoint(Extra-small){
+                margin: auto;
+            }
+        }
+        .create-new{
+            button{
+                @include outlined-button($blue);
+                padding: 8px 20px;
+            }
+            @include breakPoint(Extra-small){
+                margin: 10px auto;
+            }
+        }
+    }
+}

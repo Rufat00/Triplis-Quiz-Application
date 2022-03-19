@@ -1,0 +1,141 @@
+@import '../../../../styles/style';
+
+.question{
+
+    margin: 60px 0;
+    position: relative;
+
+    .delete-question{
+        @extend %icon-button;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        svg{
+            height: 36px;
+            width: 36px;
+        }
+    }
+
+    .title{
+        text-align: center;
+        margin: 15px ;
+        font-size: 30px;
+    }
+
+    .image-preview{
+        position: relative;
+        background: $paper-dark;
+        border: $hr;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        max-height: 420px;
+        img{
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 400px;
+        }
+        button{
+            @extend %icon-button;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            color: white;
+            opacity: 0.3;
+            transition: opacity 0.5s, background 0.5s;
+            transform: translateY(-50%);
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+
+    .question-image{
+        input{
+            display: none;
+        }
+        label{
+            margin: auto;
+            width: 100%;
+        }
+        div{
+            @include upload-button($cyan);
+            width: 100%;
+            margin-top: 8px;
+        }
+    }
+
+    .question-input{
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        label{
+            margin-bottom: 8px;
+            display: inline-flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        input{
+            @extend %outlined-input;
+            width: 100%;
+            font-size: 18px;
+        }
+    }
+
+    .answers{
+
+        .answers-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 8px 0;
+            color: white;
+            button{
+                @extend %icon-button;
+                svg{
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
+
+        .answer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 16px 0;
+            div:nth-child(1){
+                flex-grow: 1;
+                display: flex;
+            }
+            label{
+                font-size: 28px;
+            }
+            input[type="text"]{
+                @extend %outlined-input;
+                flex-grow: 1;
+                margin: 0 16px; 
+            }
+            input[type="checkbox"]{
+                @include radio($orange);
+                margin: 8px ;
+            }
+            button{
+                @extend %icon-button;
+            }
+            @include breakPoint(Extra-small){
+                flex-wrap: wrap;
+                div{
+                    width: 100%;
+                    text-align: center;
+                    align-items: center;
+                }
+            }
+        }
+
+    }
+
+}

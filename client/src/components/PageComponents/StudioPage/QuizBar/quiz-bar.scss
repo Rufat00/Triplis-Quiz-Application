@@ -1,0 +1,76 @@
+@import '../../../../styles/style';
+
+.quiz-bar{
+    background-color: $paper;
+    margin: 8px 0;
+    padding: 5px 0;
+    box-shadow: $shadow-2xl;
+    transition: transform 0.3s;
+    &:hover{
+        transform: translateY(-3px);
+    }
+    &.selected{
+        border: 1px solid $blue;
+    }
+    @include breakPoint(Extra-small){
+        margin: 25px;
+        border-radius: 5px;
+    }
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        .option{
+            cursor: text;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px;
+            span{
+                color: $text-main;
+                margin-bottom: 5px;
+            }
+
+            b{
+                color: $text-header;
+            }
+            color: $text-header;
+            font-size: 18px;
+
+            .badge{
+                color: white;
+                padding: 5px 15px;
+                border: 2px solid white;
+                border-radius: 5px;
+                cursor: text;
+                box-shadow: $shadow;
+
+                &.private{
+                    border-color: $red;
+                }
+                &.public{
+                    border-color: $green;
+                }
+            }
+
+            input[type="checkbox"]{
+                @include radio($blue)
+            }
+        }
+        .buttons{
+            flex-direction: row;
+            button{
+                @extend %icon-button;
+                margin: 0 5px;
+                svg{
+                    height: 36px;
+                    width: 36px;
+                }
+            }
+        }
+    }
+}

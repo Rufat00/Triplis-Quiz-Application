@@ -1,0 +1,148 @@
+@import '../../../styles/style';
+
+.nav-bar {
+    position: relative;
+    background: $paper;
+    padding: 15px 0;
+    box-shadow: $shadow-lg;
+    &.logined{
+        padding: 10px 0;
+    }
+
+    .full-block{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include breakPoint(Extra-small){
+            flex-wrap: wrap;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            img{
+                height: 45px;
+                width: 45px;
+                margin: 0 5px;
+            }
+            h3{
+                font-size: 30px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                font-family: $font-head;
+            }
+            @include breakPoint(Extra-small){
+                img{
+                    height: 35px;
+                    width: 35px;
+                }
+                h3{
+                    font-size: 25px;
+                }
+            }
+        }
+ 
+        li{
+            display: inline-block;
+            margin: 0 25px;
+            font-weight: bold;
+            cursor: pointer;
+            a{
+                color: $text-main;
+                font-size: 25px;
+                font-family: $font-head;
+                transition: color 0.5s;
+                &:hover{
+                    color: white;
+                    transition: color 0.5s;
+                }
+            }
+            span{
+                padding: 0 5px;
+                display: inline-block;
+                font-family: $font-head;
+            }
+            svg{
+                margin-bottom: -4px;
+            }
+            @include breakPoint(Small){
+                display: none;
+                margin: 0;
+                span{
+                    display: none;
+                }
+                svg{
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+        .actions{
+            @include breakPoint(Small){
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-grow: 1;
+            }
+        }
+        button{
+            @include filled-button;
+
+            @include breakPoint(Extra-small){
+                padding: 8px 20px;
+            }
+        }
+        .avatar, .avatar img{
+            margin-top: 3px;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            background: $paper-dark;
+            cursor: pointer;
+            @include breakPoint(Extra-small){
+                width: 45px;
+                height: 45px;
+            }
+        }
+        .list {
+            position: absolute;
+            right: 30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            background-color: $paper-dark;
+            padding: 10px 0;
+            &,a{
+                color: $text-header;
+                font-size: 18px;
+            }
+
+            .list-option{
+                padding: 10px 25px;
+                transition: background 0.2s;
+                cursor: pointer;
+                svg{
+                    margin-bottom: -5px;
+                    margin-right: 15px;
+                }
+                &:hover{
+                    background: lighten($paper-dark, 10);
+                }
+            }
+            .list-header{
+                border-bottom: 1px solid $text-main;
+                margin-bottom: 10px;
+                cursor: default;
+                &:hover{
+                    background: none;
+                }
+            }
+            &.open{
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+    &.logined .full-block li {
+        display: inline-block;
+    }
+}

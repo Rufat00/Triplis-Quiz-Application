@@ -1,0 +1,140 @@
+@import '../../../styles/style';
+.alert{
+    background: $text-main;
+    color: $text-header;
+    padding: 6px 16px;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    font-size: 18px;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -100px);
+    opacity: 1;
+    z-index: 1400;
+
+    @include breakPoint(Extra-small){
+        width: calc(100% - 30px);
+        margin: auto;
+    }
+
+    &.warn{
+        background: $warning;
+    }
+    &.success{
+        background: $success;
+    }
+    &.info{
+        background: $info;
+    }
+    &.error{
+        background: $error;
+    }
+
+    &.show{
+        visibility: visible;
+        pointer-events: auto;
+        animation: show_slide 0.6s ease forwards;
+    }
+    &.visible{
+        visibility: visible;
+    }
+
+    @keyframes show_slide {
+        0%{
+            transform: translate(-50%, -100vh);
+        }
+        1%{
+          transform: translate(-50%, -100px);
+        }
+        100%{
+          transform: translate(-50%, 0%);
+        }
+      }
+
+    &.hide{
+        animation: hide_slide 0.6s ease forwards;
+      }
+
+      @keyframes hide_slide {
+        0%{
+          transform: translate(-50%, 10px);
+        }
+        45%{
+            transform: translate(-50%, 44px);
+        }
+        99%{
+          transform: translate(-50%, -100px);
+        }
+        100%{
+            transform: translate(-50%, -100vh);
+        }
+      }
+
+
+    position: fixed;
+    visibility: hidden;
+    top: 24px;
+    left: 50%;
+    right: auto;
+
+    .icon{
+        margin-right: 12px;
+        padding: 7px 0;
+        display: flex;
+        font-size: 22px;
+        opacity: 0.9;
+    }
+    .text{
+        display: block;
+        line-height: 1.2;
+        font-family: $default;
+        font-weight: 500;
+        padding: 8px 0 ;
+        svg{
+            user-select: none;
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+        }
+    }
+    .button{
+        align-items: flex-start;
+        padding: 0 0 0 16px;
+        margin-left: auto;
+        margin-right: -8px;
+        display: flex;
+
+        button{
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            position: relative;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            background-color: transparent;
+            outline: 0px;
+            border: 0px;
+            cursor: pointer;
+            user-select: none;
+            vertical-align: middle;
+            appearance: none;
+            text-decoration: none;
+            text-align: center;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            overflow: visible;
+            transition: background 0.5s;
+            color: inherit;
+            padding: 7px;
+
+            &:hover{
+                background: rgb(255, 255, 255, 0.25);
+                transition: background 0.5s;
+            }
+        }
+    }
+}

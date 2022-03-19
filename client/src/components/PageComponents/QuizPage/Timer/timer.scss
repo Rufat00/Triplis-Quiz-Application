@@ -1,0 +1,15 @@
+@import '../../../../styles/style';
+
+.timer{
+    padding: 10px 15px;
+    background: $info;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    &.middle{
+        background: $warning;
+    }
+    &.min{
+        background: $error;
+    }
+}

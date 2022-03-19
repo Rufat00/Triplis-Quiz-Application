@@ -1,0 +1,14 @@
+.content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.content-placeholder {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+}

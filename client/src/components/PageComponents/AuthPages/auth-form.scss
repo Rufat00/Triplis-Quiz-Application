@@ -1,0 +1,57 @@
+@import '../../../styles/style';
+
+.auth-form{
+    margin: auto;
+    width: 500px;
+    .info{
+        text-align: center;
+        img{
+            width: 90px;
+            height: 90px;
+        }
+        h3{
+            font-size: 28px;
+            margin-bottom: 8px ;
+        }
+
+    }
+    .input{
+        margin-bottom: 25px;
+        display: block;
+        label{
+            width: 100%;
+            margin-bottom: 8px;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            a{
+                font-size: 18px;
+            }
+        }
+        input {
+            width: 100%;
+            display: block;
+            @extend %input;
+        }
+    }
+    .submit{
+        display: flex;
+        button{
+            @include filled-button($red);
+            border-radius: 3px;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+    .others{
+        text-align: center; 
+        button{
+            @include filled-button($red);
+            border-radius: 3px;
+        }
+    }
+    @include breakPoint(Extra-small){
+        padding: 0 15px;
+    }
+}
