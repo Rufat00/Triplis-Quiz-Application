@@ -45,7 +45,7 @@ first you need to get config.json file in ./client/src/http and then
 
 ```json
 {
-    "baseURL": "Your server's url"
+    "baseURL": "Your server's url"/api
 }
 ```
 ---
